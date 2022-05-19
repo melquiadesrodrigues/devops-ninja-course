@@ -1,0 +1,26 @@
+---
+# tasks file for install_kubectl
+- name: install libs
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+    state: present
+    update_cache: yes
+
+- name: install kubectl gpg key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add kubectl repository
+  apt_repository:
+    filename: "/etc/apt/sources.list.d/kubernetes.list"
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: install kubectl
+  apt:
+    name: kubectl
+    state: present

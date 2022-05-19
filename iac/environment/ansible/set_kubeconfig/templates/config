@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "devops-ninja"
+  cluster:
+    server: "{{ cluster.server }}"
+    certificate-authority-data: "{{ cluster.certificate_authority_data }}"
+
+users:
+- name: "devops-ninja"
+  user:
+    token: "{{ cluster.token }}"
+
+contexts:
+- name: "devops-ninja"
+  context:
+    user: "devops-ninja"
+    cluster: "devops-ninja"
+
+current-context: "devops-ninja"

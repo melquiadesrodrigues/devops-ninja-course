@@ -4,7 +4,13 @@
     - install_docker
     - install_docker_compose
     - install_git
+
 - hosts: manager
   become: yes
   roles:
     - install_rancher
+
+- host: workers
+  become: yes
+  roles:
+    - install_kubectl

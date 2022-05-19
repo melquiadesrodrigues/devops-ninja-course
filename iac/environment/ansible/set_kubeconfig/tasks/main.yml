@@ -1,0 +1,12 @@
+---
+# tasks file for configure_kubeconfig
+- name: create dir /app
+  file:
+    path: /home/{{ ansible_user }}/.kube
+    state: directory
+
+- name: copy kubeconfig
+  template:
+    src: config
+    dest: /home/{{ ansible_user }}/.kube/config
+    mode: 0600

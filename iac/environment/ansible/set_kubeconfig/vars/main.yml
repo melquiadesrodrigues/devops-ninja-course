@@ -1,0 +1,18 @@
+---
+# vars file for configure_kubeconfig
+ansible_user: ubuntu
+cluster:
+    token: "kubeconfig-user-rp9ftnzxtp:277tsdx7wbv84fwlnwrc4sbkj9z5n4248l6d66rwn8dc8kcvmffsmp"
+    server: https://rancher.zahirsistemas.com.br/k8s/clusters/c-vnbdt
+    certificate_authority_data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJwekNDQ\
+      VUyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQTdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKY\
+      kdsemRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRXdIa\
+      GNOTWpJdwpOVEU1TVRrek5qTTFXaGNOTXpJd05URTJNVGt6TmpNMVdqQTdNUnd3R2dZRFZRUUtFe\
+      E5rZVc1aGJXbGpiR2x6CmRHVnVaWEl0YjNKbk1Sc3dHUVlEVlFRREV4SmtlVzVoYldsamJHbHpkR\
+      1Z1WlhJdFkyRXdXVEFUQmdjcWhrak8KUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVMvZVA4Y1JPU2g0T\
+      HFEYldYT3REVDRFQS80QWNYNDh0YW1XUGtXMmpiMwppbDNxTlBKS0tSTkpMcEFSV2I2RTM5MkcvN\
+      XRsM2tRZllDT200UHJ2ZWRTYm8wSXdRREFPQmdOVkhROEJBZjhFCkJBTUNBcVF3RHdZRFZSMFRBU\
+      UgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVRmhLWnB4N0lwOTRPWU1KK3EwTHgKQjlSL3hEOHdDZ\
+      1lJS29aSXpqMEVBd0lEU0FBd1JRSWdldHVGN2FQVW9jcFJhQ3dBSS9SZnVUWVJ3b2hCTjArNQo2Q\
+      msySUI0Unh1Y0NJUUQ5SXRycDZaZk1JVzhYd3BaakgzNDVjcEs2bGl0UnhMaWFETzlUYnMzWGR3P\
+      T0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ=="
