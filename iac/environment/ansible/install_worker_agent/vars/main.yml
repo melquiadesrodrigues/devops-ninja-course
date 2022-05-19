@@ -1,0 +1,5 @@
+---
+# vars file for install_worker_agent
+server: http://rancher.zahirsistemas.com.br
+token: kbjgbx5bp86ngmfvk5pjl94xtqpwz9jqc5jkgv5266prvxc8jqq8mp
+ca_checksum: 7b23a95fc641e098e7be88af672cac890b15376a591835755fe061b22e9c5728

@@ -1,0 +1,15 @@
+---
+# tasks file for install_worker_agent
+- name: Install rancher
+  community.docker.docker_container: 
+    name: worker
+    image: rancher/rancher-agent:v2.6.5
+    state: started
+    restart: yes
+    restart_policy: unless-stopped
+    privileged: yes
+    network_mode: host
+    command: --server {{ server }} --token {{ token }} --ca-checksum {{ ca_checksum }} --etcd --controlplane --worker
+    volumes:
+      - /var/run:/var/run
+      - /etc/kubernetes:/etc/kubernetes

@@ -1,0 +1,4 @@
+- hosts: workers
+  become: yes
+  roles:
+    - install_worker_agent

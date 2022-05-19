@@ -1,0 +1,11 @@
+---
+# tasks file for install_docker_compose
+- name: install jsondiff
+  pip:
+    name: jsondiff  
+    state: present
+    
+- name: install docker-compose
+  apt:
+    name: docker-compose
+    state: present

@@ -1,0 +1,15 @@
+---
+# tasks file for install_rancher
+- name: Install rancher
+  community.docker.docker_container: 
+    name: rancher
+    image: rancher/rancher:latest
+    state: started
+    restart_policy: unless-stopped
+    restart: yes
+    privileged: yes
+    volumes:
+      - /opt/rancher:/var/lib/rancher
+    ports:
+      - 80:80
+      - 443:443
