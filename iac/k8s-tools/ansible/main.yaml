@@ -1,0 +1,6 @@
+ - hosts: workers
+#  - hosts: localhost
+   become: true
+  #  connection: local
+   roles: 
+     - install_traefik

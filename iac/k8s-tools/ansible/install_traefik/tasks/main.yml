@@ -1,0 +1,27 @@
+---
+- name: Install libs
+  pip:
+    name:
+      - kubernetes
+      - websocket
+      - websocket-client
+    state: present
+- name: Create traefik Namespace
+  kubernetes.core.k8s:
+    name: traefik
+    api_version: v1
+    kind: Namespace
+    state: present
+    kubeconfig: ../files/kubeconfig
+
+- name: Add traefik repo
+  kubernetes.core.helm_repository:
+    name: traefik
+    repo_url: "https://helm.traefik.io/traefik"
+
+- name: Install traefik chart
+  kubernetes.core.helm:
+    name: traefik
+    chart_ref: traefik/traefik
+    release_namespace: traefik
+    kubeconfig: ../files/kubeconfig
