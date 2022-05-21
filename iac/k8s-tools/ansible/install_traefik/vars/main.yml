@@ -1,2 +1,3 @@
 ---
 # vars file for install_traefik
+traefik_dns: traefik.rancher.zahirsistemas.com.br

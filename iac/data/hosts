@@ -1,0 +1,14 @@
+[manager]
+54.225.62.120
+
+[workers]
+18.206.179.81
+54.162.222.149
+3.80.254.88
+
+[cluster]
+18.206.179.81
+
+[all:vars]
+ansible_ssh_private_key_file=~/works/hering/devops-ninja/iac/data/ec2-devops-ninja.pem
+ansible_user=ubuntu

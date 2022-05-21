@@ -1,0 +1,26 @@
+---
+# tasks file for install_helm
+- name: install libs
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+    state: present
+    update_cache: yes
+
+- name: add helm asc key
+  apt_key:
+    url: https://baltocdn.com/helm/signing.asc
+    state: present
+
+- name: Add helm repository
+  apt_repository:
+    filename: "/etc/apt/sources.list.d/helm-stable-debian.list"
+    repo: deb https://baltocdn.com/helm/stable/debian/ all main
+    state: present
+
+- name: install helm
+  apt:
+    name: helm
+    state: present

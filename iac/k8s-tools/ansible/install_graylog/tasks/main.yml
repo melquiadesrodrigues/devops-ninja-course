@@ -1,0 +1,7 @@
+---
+# tasks file for install_graylog
+- name: Graylog resources
+  kubernetes.core.k8s:
+    state: present
+    template: '../files/graylog.yaml'
+    namespace: graylog

@@ -10,7 +10,8 @@
   roles:
     - install_rancher
 
-- host: workers
+- hosts: workers
   become: yes
   roles:
     - install_kubectl
+    - install_helm

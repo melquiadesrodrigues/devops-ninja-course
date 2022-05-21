@@ -1,18 +1,20 @@
 ---
 - name: Install libs
   pip:
-    name:
-      - kubernetes
-      - websocket
-      - websocket-client
+    name: kubernetes
     state: present
+
+- name: Install lib client
+  pip:
+    name: websocket-client
+    state: present
+
 - name: Create traefik Namespace
   kubernetes.core.k8s:
     name: traefik
     api_version: v1
     kind: Namespace
     state: present
-    kubeconfig: ../files/kubeconfig
 
 - name: Add traefik repo
   kubernetes.core.helm_repository:
@@ -22,6 +24,12 @@
 - name: Install traefik chart
   kubernetes.core.helm:
     name: traefik
+    state: present
     chart_ref: traefik/traefik
     release_namespace: traefik
-    kubeconfig: ../files/kubeconfig
+
+- name: Traefik dashboard
+  kubernetes.core.k8s:
+    state: present
+    template: '../templates/dashboard.j2'
+    namespace: traefik

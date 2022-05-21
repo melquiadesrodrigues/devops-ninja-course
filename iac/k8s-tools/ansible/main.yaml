@@ -1,6 +1,7 @@
- - hosts: workers
 #  - hosts: localhost
-   become: true
   #  connection: local
+ - hosts: cluster
    roles: 
      - install_traefik
+     - install_longhorn
+     - install_graylog
