@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: am9uYXRoYW5iYXJhbGRp
+  password: am9uam9u
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mypod
+    image: redis
+    env:
+    - name: username
+      valueFrom:
+        secretKeyRef:
+          name: mysecret
+          key: username
+    - name: password
+      valueFrom:
+        secretKeyRef:
+          name: mysecret
+          key: password
